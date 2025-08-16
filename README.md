@@ -4,7 +4,7 @@
 An NLP-powered movie recommender using **TF-IDF** and **cosine similarity**, deployed with FastAPI and Streamlit. Recommends films based on plot/genre similarity.
 
 [![Deployed on Render](https://img.shields.io/badge/Render-Deployed-green)](https://movie-recommender-khzw.onrender.com/)
-
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://applicationpy-a2kckmykuw8z48x9nxhbaj.streamlit.app/)
 
 ## 🚀 Features
 - **Content-based filtering** (no user data required)
