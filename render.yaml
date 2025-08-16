@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: movie-recommender
+    name: movie-recommender-ui
     runtime: python
-    buildCommand: "pip install -r requirements.txt"  # Fix: Remove duplicate text
-    startCommand: "uvicorn api:application --host 0.0.0.0 --port 8000"
+    buildCommand: pip install -r requirements.txt
+    startCommand: python manage.py runserver --host 0.0.0.0 --port 8000

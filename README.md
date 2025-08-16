@@ -1,36 +1,92 @@
-# movie-recommender
+---
+
+```markdown
 # 🎬 Movie Recommendation Engine
 
-An NLP-powered movie recommender using **TF-IDF** and **cosine similarity**, deployed with FastAPI and Streamlit. Recommends films based on plot/genre similarity.
+**Multi-interface** recommendation system with:
+- Django web UI (new!)
+- FastAPI backend
+- Streamlit interactive demo
 
-[![Deployed on Render](https://img.shields.io/badge/Render-Deployed-green)](https://movie-recommender-khzw.onrender.com/docs)
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://applicationpy-a2kckmykuw8z48x9nxhbaj.streamlit.app/)
+[![Deployed on Render](https://img.shields.io/badge/Render-Django_UI-green)](https://movie-recommender-khzw.onrender.com/docs)  
+
 
 ## 🚀 Features
-- **Content-based filtering** (no user data required)
-- **FastAPI backend** for recommendations
-- **Streamlit UI** for interactive testing
-- **Free deployment** on Render
+| Component       | Technology | Access Point |
+|----------------|------------|--------------|
+| Web UI         | Django     | `/`          |
+| API Backend    | FastAPI    | `/api/docs`  |
+| Data Explorer  | Streamlit  | `/app`       |
 
 ## 🛠️ Tech Stack
-| Component       | Technology |
-|----------------|------------|
-| NLP Model      | TF-IDF + Cosine Similarity |
-| Backend        | FastAPI    |
-| Frontend       | Streamlit  |
-| Deployment     | Render     |
-| Dataset        | [TMDB Movies](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata) |
+- **Backend**: FastAPI + TF-IDF/Cosine Similarity
+- **Web UI**: Django 5
+- **Data Tools**: Pandas, scikit-learn
+- **Deployment**: Render (Django), Streamlit Cloud
 
-## 📦 Installation
+## 🏗️ Project Structure
+```
+movie-recommender/
+├── api.py               # FastAPI endpoints
+├── app.py               # Streamlit UI
+├── django_ui/           # Django project root
+│   ├── settings.py
+│   └── urls.py
+├── recommender/         # Django app
+│   ├── templates/       # HTML files
+│   └── views.py         # Connects to FastAPI
+└── requirements.txt     # Unified dependencies
+```
+
+## 🖥️ How to Run
+### Option 1: Django Web UI
 ```bash
-git clone https://github.com/saida25/movie-recommender.git
-cd movie-recommender
-python -m venv .venv
-source .venv/bin/activate  # Linux/Mac
-# .venv\Scripts\activate  # Windows
-pip install -r requirements.txt
+python manage.py runserver  # http://localhost:8000
+```
+
+### Option 2: FastAPI Backend
+```bash
+uvicorn api:app --reload  # http://localhost:8001
+```
+
+### Option 3: Streamlit
+```bash
+streamlit run app.py  # http://localhost:8501
+```
+
+## 🌐 Deployment
+1. **Django UI**: Update `render.yaml` to use:
+   ```yaml
+   startCommand: "python manage.py runserver --host 0.0.0.0 --port 8000"
+   ```
+2. **Streamlit**: Deploy via [Streamlit Cloud](https://streamlit.io/cloud)
+
+## 🔄 Workflow
+```mermaid
+graph LR
+    A[Django UI] -->|HTTP Calls| B[FastAPI]
+    B --> C[TF-IDF Model]
+    C --> D[(Movie Data)]
+```
+
+## 📜 License
+MIT
+```
+
+---
+
+### Key Updates:
+1. **Added Django** as first-class interface
+2. **Clear table** showing access points
+3. **Visual workflow** diagram (MermaidJS)
+4. **Kept all existing** functionality (FastAPI/Streamlit)
+
+### Social Media Snippet:
+> 🎥 Just upgraded my movie recommender with a @Django web UI!  
+> - Reuses my existing FastAPI backend  
+> - Preserves Streamlit for quick demos  
+> - All in one repo 🔄  
+>  
+> Code: [https://github.com/saida25/movie-recommender] #Python #Django #AI  
 
 
-uvicorn api:application --reload
-streamlit run application.py
-pip freeze > requirements.txt
