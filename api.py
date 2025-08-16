@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from recommender import recommend_movies
+from ml_recommender import recommend_movies
 
 app = FastAPI()
 
