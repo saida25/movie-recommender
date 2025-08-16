@@ -1,5 +1,5 @@
 
-from ml_recommender import views  # Import the views from recommender app
+from recommender import views  # Import the views from recommender app
 from django.contrib import admin
 from django.urls import path
 urlpatterns = [

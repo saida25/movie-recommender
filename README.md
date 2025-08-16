@@ -42,7 +42,7 @@ python manage.py runserver
 
 #### FastAPI Backend (Port 8001)
 ```bash
-uvicorn api:app --port 8001
+uvicorn api:app --reload --port 8001
 ```
 
 #### Streamlit App (Port 8501)
@@ -72,7 +72,7 @@ streamlit run app.py
        startCommand: "python manage.py runserver --host 0.0.0.0"
      - type: web 
        name: fastapi
-       startCommand: "uvicorn api:app --host 0.0.0.0"
+       startCommand: "uvicorn api:application --host 0.0.0.0"
    ```
 2. **Streamlit**: Deploy via [Streamlit Cloud](https://streamlit.io/cloud)
 
