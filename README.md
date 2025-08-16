@@ -1,6 +1,3 @@
-Here's a **clean, professional README.md** for your multi-interface movie recommender with clear sections for Django, FastAPI, and Streamlit:
-
-```markdown
 # 🎬 Multi-Interface Movie Recommendation Engine
 
 **Choose your interface**: Django Web UI | FastAPI Backend | Streamlit Demo
