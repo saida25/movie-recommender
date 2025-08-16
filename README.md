@@ -82,7 +82,7 @@ streamlit run app.py
 3. **Response** → Returns 5 most similar movies
 
 ## 📜 License
-MIT © 2024 | [Saida YENGUI]
+MIT © 2025 | [Saida YENGUI]
 ```
 
 ### Key Features:
