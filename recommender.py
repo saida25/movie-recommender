@@ -1,8 +1,10 @@
 import pandas as pd
+import os
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-df = pd.read_csv("/home/saida/Documents/Projects/movie-recommender/movies.csv")
+csv_path = os.path.join(os.path.dirname(__file__), "movies.csv")
+df = pd.read_csv(csv_path)
 df["features"] = df["overview"] + " " + df["genres"].astype(str)
 
 tfidf = TfidfVectorizer(stop_words="english")
